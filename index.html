@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>作业</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: url("./img/bg1.jpg");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        position: relative;
+        overflow: hidden;
+      }
+      #box {
+        width: 100px;
+        height: 100px;
+        background: url("./img/mouse.png");
+        background-color: #fdfd00;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 50px;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 小方块 -->
+    <div id="box"></div>
+    <!-- 以下为脚本 -->
+    <script>
+      // 先拿到小方块哦
+      var box = document.getElementById("box");
+
+      // 给页面文档加上监听鼠标移动事件
+      document.onmousemove = function (event) {
+        // *** event为事件对象，包含鼠标移动事件的坐标值 ***
+
+        /** 那就用事件对象里面的坐标值为小方块赋值吧
+         *  event.pageX是光标移动离页面左边距离
+         *  event.pageY是光标移动离页面上边距离
+         *  box.style.left 是小方块离页面左边的数字距离
+         *  box.style.top  是小方块离页面上边的数字距离
+        */
+
+        box.style.left = event.pageX + "px";
+        box.style.top = event.pageY + "px";
+      };
+    </script>
+  </body>
+</html>
